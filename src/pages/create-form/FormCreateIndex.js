@@ -84,14 +84,14 @@ function FormCreateIndex({ formData, isEdit, isLoading }) {
 
         if (isEdit) {
             try {
-                const response = axios.put(`https://form-builder-api-three.vercel.app/mockdata/${id}`, payload)
+                const response = await axios.put(`https://form-builder-api-three.vercel.app/mockdata/${id}`, payload)
                 toast.success('Changes Updated Successfully!')
             } catch (error) {
                 console.log(error.response.data.msg);
             }
         } else {
             try {
-                const response = axios.post(`https://form-builder-api-three.vercel.app/mockData`, payload)
+                const response = await axios.post(`https://form-builder-api-three.vercel.app/mockData`, payload)
                 toast.success('Form Created Successfully!')
                 navigate('/')
             } catch (error) {
